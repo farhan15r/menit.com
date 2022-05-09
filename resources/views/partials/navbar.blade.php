@@ -16,9 +16,11 @@
                 </div>
             </div>
 
-            <div class="input-group collapse" id="searchMenu">
-                <input type="text" class="form-control" id="search" placeholder="Search...">
-                <button class="input-group-text" id="basic-addon2">Search</button>
+            <div class="collapse" id="searchMenu">
+                <form class="input-group" action="/search" method="get">
+                    <input type="text" class="form-control" id="query" name='query' placeholder="Search..." value="{{ request('query') }}">
+                    <button class="input-group-text" type="submit">Search</button>
+                </form>
             </div>
         </header>
 
