@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
 
-                <a class="btn btn-sm btn-secondary mx-2" href="#">Sign in</a>
+                <a class="btn btn-sm btn-secondary mx-2" href="/login">Sign in</a>
                 <a class="btn btn-sm btn-outline-secondary d-none d-sm-block" href="#">Sign up</a>
                 </div>
             </div>
