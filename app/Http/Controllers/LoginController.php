@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 
 class LoginController extends Controller
@@ -83,5 +84,14 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function authenticate(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
+        dd('berhasil login');
     }
 }

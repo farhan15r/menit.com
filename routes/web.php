@@ -22,3 +22,4 @@ Route::get('/', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/search/', [SearchController::class, 'index']);
 Route::get('/login/', [LoginController::class, 'index']);
+Route::post('/login/', [LoginController::class, 'authenticate']);
