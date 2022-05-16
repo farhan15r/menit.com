@@ -10,7 +10,7 @@
                 </div>
             @endif
             <h1 class="h1 fw-normal text-center">Sign In</h1>
-            <span class="text-center">Please enter your registered account</span>
+            <p class="text-center">Please enter your registered account</p>
 
             <form action="/login" method="post">
             @csrf
