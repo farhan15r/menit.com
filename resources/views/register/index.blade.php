@@ -18,7 +18,16 @@
                     @enderror
                 </div>
                 <div class="form-floating my-2">
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email"placeholder="name@example.com" autofocus value="{{ old('email') }}">
+                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="username" value="{{ old('username') }}">
+                    <label for="floatingInput">User Name</label>
+                    @error('username')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="form-floating my-2">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email"placeholder="name@example.com" value="{{ old('email') }}">
                     <label for="floatingInput">Email Address</label>
                     @error('email')
                         <div class="invalid-feedback">
@@ -31,18 +40,28 @@
                     <label for="floatingPassword">New Password</label>
                 </div>
                 <div class="form-floating my-2">
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
                     <label for="floatingPassword">Retype New Password</label>
                 </div>
 
                 <div class="checkbox mb-3">
                     <label>
-                        <input type="checkbox" value="remember-me"> I have read and agree to the terms presented in the Privacy Policy agreement.
+                        <input type="checkbox" value="Privacy-agreement" onclick="checkBox(this)"> I have read and agree to the terms presented in the Privacy Policy agreement.
                     </label>
                 </div>
 
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                <button class="w-100 btn btn-lg btn-secondary" id="submit" type="submit" disabled>Sign Up</button>
             </form>
         </main>
     </div>
+@endsection
+
+@section('scripts')
+<script>
+    function checkBox(cb){
+        if (cb.checked) {
+            document.getElementById('submit').disabled = false;
+        }else document.getElementById('submit').disabled = true;
+    }
+</script>
 @endsection

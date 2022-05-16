@@ -34,9 +34,9 @@
                     </label>
                 </div>
 
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <button class="w-100 btn btn-lg btn-secondary" type="submit">Sign in</button>
             </form>
-            <p class="text-center">Don't have account? <br> Don't worry!, <a href="">click here to register now.</a></p>
+            <p class="text-center">Don't have account? <br> Don't worry!, <a href="/register">click here to register now.</a></p>
         </main>
     </div>
 @endsection
