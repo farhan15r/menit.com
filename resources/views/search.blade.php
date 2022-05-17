@@ -5,7 +5,7 @@
     <div style="max-width: 800px">
         <p class="fs-5">Hasil pencarian <strong>"{{ $query }}"</strong>, {{ count($posts) }} hasil di temukan.</p>
         @foreach ($posts as $post)
-            <div class="card mb-3" id="post">
+            <div class="card mb-3" id="post" onmousemove="on(this)" onmouseout="off(this)">
                 <div class="row g-0">
                     <div class="col-4" style="max-height: 180px; overflow: hidden;">
                         <img src="https://source.unsplash.com/500x800?{{ $post->category->name }}" class="img-fluid rounded-start" alt="">
@@ -23,4 +23,15 @@
         @endforeach
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        function on(over) {
+            over.classList.add("shadow");
+        }
+        function off(over){
+            over.classList.remove("shadow");
+        }
+    </script>
 @endsection
