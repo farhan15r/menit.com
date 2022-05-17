@@ -46,7 +46,7 @@
 
                 <div class="checkbox mb-3">
                     <label>
-                        <input type="checkbox" value="Privacy-agreement" onclick="checkBox(this)"> I have read and agree to the terms presented in the Privacy Policy agreement.
+                        <input type="checkbox" value="Privacy-agreement" onclick="checkBox(this)"> I have read and agree to the terms presented in the <a href="">Privacy Policy agreement</a>.
                     </label>
                 </div>
 
