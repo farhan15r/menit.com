@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-center">
-        <main class="col-md-5 mb-5">
+        <main class="col-lg-5 mb-5">
             <h1 class="h1 fw-normal text-center">Sign Up</h1>
             <p class="text-center">Please fill the following fields with your information.</p>
 
@@ -52,6 +52,7 @@
 
                 <button class="w-100 btn btn-lg btn-secondary" id="submit" type="submit" disabled>Sign Up</button>
             </form>
+            <p class="text-center">Already sign up? <a href="/login">click here to sign in.</a></p>
         </main>
     </div>
 @endsection

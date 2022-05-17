@@ -14,7 +14,7 @@
 
             <form action="/login" method="post">
             @csrf
-                <div class="form-floating mt-3">
+                <div class="form-floating my-2">
                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus value="{{ old('email') }}">
                     <label for="floatingInput">Email address</label>
                     @error('email')
@@ -23,7 +23,7 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-floating">
+                <div class="form-floating my-2">
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                 </div>
