@@ -27,7 +27,7 @@
                     @enderror
                 </div>
                 <div class="form-floating my-2">
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email"placeholder="name@example.com" value="{{ old('email') }}">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" value="{{ old('email') }}">
                     <label for="floatingInput">Email Address</label>
                     @error('email')
                         <div class="invalid-feedback">
@@ -36,12 +36,18 @@
                     @enderror
                 </div>
                 <div class="form-floating my-2">
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password">
                     <label for="floatingPassword">New Password</label>
                 </div>
                 <div class="form-floating my-2">
-                    <input type="password" name="password" class="form-control" placeholder="Password">
-                    <label for="floatingPassword">Retype New Password</label>
+                    <input type="password" name="password_confirmation" class="form-control  @error('password') is-invalid @enderror" id="password_confirmation" placeholder="Password">
+                    <label for="floatingPassword">Confirm New Password</label>
+                    {{-- if password error --}}
+                    @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="checkbox mb-3">
