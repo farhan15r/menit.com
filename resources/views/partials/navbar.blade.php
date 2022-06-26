@@ -25,7 +25,13 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/dashboard/">Dashboard</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        <li>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button class="dropdown-item" type="submit">Log out</button>
+                            </form>
+                            {{-- <a class="dropdown-item" href="/logout">Log Out</a> --}}
+                        </li>
                     </ul>
                 </div>
                 @else
