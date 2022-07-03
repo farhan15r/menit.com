@@ -27,8 +27,10 @@ Route::get('/search/', [SearchController::class, 'index']);
 Route::get('/register/', [RegisterController::class, 'index']);
 Route::post('/register/', [RegisterController::class, 'store']);
 
-Route::get('/login/', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login/', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login/', [LoginController::class, 'authenticate']);
 Route::post('/logout/', [LoginController::class, 'logout']);
 
-Route::get('/dashboard/', [DashboardController::class, 'index']);
+Route::get('/dashboard/', function () {
+    return view('dashboard.index');
+})->middleware('auth');
