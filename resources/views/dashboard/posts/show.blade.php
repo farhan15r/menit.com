@@ -15,7 +15,7 @@
 
                 <img src="https://source.unsplash.com/500x500?{{ $post->category->name }}" class="img-fluid my-2" alt="...">
                 <p>
-                    {{ $post->body }}
+                    {!! $post->body !!}
                 </p>
             </div>
         </div>

@@ -11,6 +11,12 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
 
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
+    ];
+
     public function scopeFilter($query)
     {
         if (request('query')) {

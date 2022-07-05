@@ -5,7 +5,14 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">My Posts</h1>
     </div>
+
     <div class="table-responsive col-lg-8">
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <a href="/dashboard/posts/create" class="btn btn-success">Create new post</a>
         <table class="table table-striped table-sm">
             <thead>
