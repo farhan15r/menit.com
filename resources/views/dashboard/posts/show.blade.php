@@ -16,8 +16,13 @@
                     @method('delete')
                     <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><span data-feather="trash-2"></span> Delete</button>
                 </form>
-
-                <img src="https://source.unsplash.com/500x500?{{ $post->category->name }}" class="img-fluid my-2" alt="...">
+                @if ($post->image)
+                    <div style="max-height: 400px; overflow:hidden">
+                        <img src="/storage/{{ $post->image }}" class="img-fluid my-2" alt="">
+                    </div>
+                @else
+                    <img src="https://source.unsplash.com/1200x500?{{ $post->category->name }}" class="img-fluid my-2" alt="">
+                @endif
                 <p>
                     {!! $post->body !!}
                 </p>

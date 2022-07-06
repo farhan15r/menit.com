@@ -16,10 +16,12 @@
     @foreach ($posts->skip(1) as $post)
     <div class="col-md-6">
         <div class="shadow row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative" style="
-        background-image: url('https://source.unsplash.com/500x500?{{ $post->category->name }}');
+        background-image: url('{{ $post->image ? '/storage/' . $post->image : 'https://source.unsplash.com/1200x500?' . $post->category->name }}');
+        position: relative;
         background-position: right;
         background-repeat: no-repeat;
-        background-height: 100%;">
+        background-height: 100%;
+        background-size: cover">
             <div style="background: linear-gradient(to right, white, white, rgba(255, 255, 255, 0))">
                 <div class="col-lg-8 p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">{{ $post->category->name }}</strong>

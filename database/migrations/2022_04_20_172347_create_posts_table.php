@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('category_id');
             $table->string('user_id');
             $table->text('excerpt')->nullable();
+            $table->text('image')->nullable();
             $table->text('body')->nullable();
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
