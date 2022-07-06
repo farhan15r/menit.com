@@ -21,7 +21,6 @@ return new class extends Migration {
             $table->text('excerpt')->nullable();
             $table->text('image')->nullable();
             $table->text('body')->nullable();
-            $table->timestamp('publish_at')->nullable();
             $table->timestamps();
         });
     }

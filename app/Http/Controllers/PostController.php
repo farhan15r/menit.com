@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         return view('index', [
-            "posts" => Post::with(['category'])->get(),
+            "posts" => Post::with(['category'])->latest()->get(),
             "categories" => Category::all() //untuk navbar
         ]);
     }
@@ -51,6 +51,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        //ddd($post);
         return view('post', [
             "post" => $post,
             "categories" => Category::all() //untuk navbar
