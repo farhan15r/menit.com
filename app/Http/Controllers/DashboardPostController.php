@@ -108,9 +108,9 @@ class DashboardPostController extends Controller
 
         if ($request->file('image')) {
             if ($post->image) {
-                Storage::delete($post->image);
+                Storage::disk('my_files')->delete($post->image);
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $validatedData['image'] = $request->file('image')->store('post-images', ['disk' => 'my_files']);
         }
 
         $validatedData['slug'] = $post->slug;
@@ -131,7 +131,7 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         if ($post->image) {
-            Storage::delete($post->image);
+            Storage::disk('my_files')->delete($post->image);
         }
         Post::destroy($post->id);
 
