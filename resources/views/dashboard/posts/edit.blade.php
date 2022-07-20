@@ -32,7 +32,7 @@
                 </select>
             </div>
             <label for="image" class="form-label">Post image</label>
-                <img id="frame" src="{{ $post->image ? '/storage/' . $post->image : '' }}" class="img-fluid d-flex mb-2" style="max-width: 40%"/>
+                <img id="frame" src="{{ $post->image ? '/files/' . $post->image : '' }}" class="img-fluid d-flex mb-2" style="max-width: 40%"/>
                 <input class="form-control  @error('image') is-invalid @enderror" type="file" id="image" name="image" accept=".png, .jpg, .jpeg" onchange="preview()">
                 @error('image')
                     <div class="invalid-feedback">

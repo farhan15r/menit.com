@@ -33,7 +33,7 @@
 
 @section('container')
 <div class="text-white rounded shadow" style="
-background-image: url('{{ $posts[0]->image ? '/storage/' . $posts[0]->image : 'https://source.unsplash.com/1200x500?' . $posts[0]->category->name }}');;
+background-image: url('{{ $posts[0]->image ? '/files/' . $posts[0]->image : 'https://source.unsplash.com/1200x500?' . $posts[0]->category->name }}');;
 background-repeat: no-repeat;
 background-position: right;
 background-repeat: no-repeat;
@@ -51,7 +51,7 @@ background-height: 100%;">
     @foreach ($posts->skip(1) as $post)
     <div class="col-md-6">
         <div class="shadow row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative" style="
-        background-image: url('{{ $post->image ? '/storage/' . $post->image : 'https://source.unsplash.com/1200x500?' . $post->category->name }}');
+        background-image: url('{{ $post->image ? '/files/' . $post->image : 'https://source.unsplash.com/1200x500?' . $post->category->name }}');
         position: relative;
         background-position: right;
         background-repeat: no-repeat;

@@ -10,7 +10,7 @@
             <p class="fw-light">Created at {{ $post->created_at->format('d-M-Y') }}. By. {{ $post->author->name }}, in {{ $post->category->name }} category</p>
             @if ($post->image)
                 <div style="max-height: 400px; overflow:hidden">
-                    <img src="/storage/{{ $post->image }}" class="img-fluid my-2" alt="">
+                    <img src="/files/{{ $post->image }}" class="img-fluid my-2" alt="">
                 </div>
             @else
                 <img src="https://source.unsplash.com/1200x500?{{ $post->category->name }}" class="img-fluid my-2" alt="">
